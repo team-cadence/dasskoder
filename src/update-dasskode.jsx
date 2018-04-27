@@ -16,14 +16,14 @@ export default class UpdateDasskode extends React.PureComponent {
 
   render() {
     let { dasskode } = this.state;
-    let { database, id } = this.props;
+    let { database, id, history } = this.props;
 
     if (!dasskode) return null;
 
     return (
       <Form
         onSubmit={values =>
-          database.ref(`/locations/${id}`).update(values)
+          database.ref(`/locations/${id}`).update(values).then(() => history.push("/"))
         }
         initialValues={{ code: dasskode.code }}
       >

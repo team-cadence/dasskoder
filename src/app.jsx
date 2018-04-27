@@ -32,7 +32,7 @@ class App extends Component {
               <Route exact path="/" render={() => <Home database={database} />}  />
               <Route path="/new" render={(props) => <AddDasskode {...props} database={database} />} />
               <Route path="/update/:id" render={(props) =>
-                <UpdateDasskode id={props.match.params.id} database={database}/>
+                <UpdateDasskode {...props} id={props.match.params.id} database={database}/>
               } />
             </Switch>
           </div>
