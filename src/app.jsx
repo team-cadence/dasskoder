@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Navbar from './navbar.jsx';
 import Home from './home.jsx';
-import Signup from './signup.jsx';
+import AddDasskode from './add-dasskode.jsx';
 
 import './app.css';
 
@@ -16,7 +16,7 @@ class App extends Component {
           <div className="container">
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/signup" component={Signup} />
+              <Route path="/new" component={AddDasskode} />
             </Switch>
           </div>
         </React.Fragment>
