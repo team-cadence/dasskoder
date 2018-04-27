@@ -5,6 +5,7 @@ import * as firebase from 'firebase';
 import Navbar from './navbar.jsx';
 import Home from './home.jsx';
 import AddDasskode from './add-dasskode.jsx';
+import UpdateDasskode from './add-dasskode.jsx';
 
 import './app.css';
 
@@ -30,6 +31,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" render={() => <Home database={database} />}  />
               <Route path="/new" render={(props) => <AddDasskode {...props} database={database} />} />
+              <Route path="/update/:name" component={UpdateDasskode} />
             </Switch>
           </div>
         </React.Fragment>

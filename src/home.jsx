@@ -5,7 +5,7 @@ import Dasskode from './dasskode.jsx';
 export default class Home extends React.PureComponent {
 
   state = {
-    dasskoder: []
+    dasskoder: [],
   };
 
   componentDidMount() {
@@ -15,6 +15,7 @@ export default class Home extends React.PureComponent {
   }
 
   render() {
+    console.log(this.state)
     return (
       <React.Fragment>
         <h1>Dasskoder</h1>
@@ -22,7 +23,7 @@ export default class Home extends React.PureComponent {
           <ul className="list-group">
             {Object.entries(this.state.dasskoder).map(([id, dasskode]) => (
               <li key={dasskode.name} className="list-group-item">
-                <Dasskode {...dasskode} />
+                <Dasskode id={id} {...dasskode} />
               </li>
             ))}
           </ul>
