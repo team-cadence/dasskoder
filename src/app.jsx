@@ -29,7 +29,7 @@ class App extends Component {
           <div className="container">
             <Switch>
               <Route exact path="/" render={() => <Home database={database} />}  />
-              <Route path="/new" component={AddDasskode} />
+              <Route path="/new" render={(props) => <AddDasskode {...props} database={database} />} />
             </Switch>
           </div>
         </React.Fragment>

@@ -20,7 +20,7 @@ export default class Home extends React.PureComponent {
         <h1>Dasskoder</h1>
         <section id="koder">
           <ul className="list-group">
-            {this.state.dasskoder.map(dasskode => (
+            {Object.entries(this.state.dasskoder).map(([id, dasskode]) => (
               <li key={dasskode.name} className="list-group-item">
                 <Dasskode {...dasskode} />
               </li>

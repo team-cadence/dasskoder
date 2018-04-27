@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { Form, Field } from 'react-final-form';
+import {Field, Form} from 'react-final-form';
+import * as uuid from 'uuid';
 
-const AddDasskode = () => (
+const AddDasskode = ({database, history}) => (
   <div>
     <h1>Add dasskode</h1>
-    <Form onSubmit={values => alert(JSON.stringify(values))}>
-      {({ handleSubmit }) => (
+    <Form onSubmit={values => database.ref(`/locations/${uuid.v4()}`).set(values).then(() => history.push("/"))}>
+      {({handleSubmit}) => (
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
@@ -34,12 +35,12 @@ const AddDasskode = () => (
           >
             <div
               className="form-group"
-              style={{ width: '100%', marginRight: 16 }}
+              style={{width: '100%', marginRight: 16}}
             >
               <label htmlFor="lat">Latitude</label>
               <Field
                 id="lat"
-                name="lat"
+                name="location.lat"
                 component="input"
                 type="number"
                 min={0}
@@ -49,12 +50,12 @@ const AddDasskode = () => (
             </div>
             <div
               className="form-group"
-              style={{ width: '100%', marginLeft: 16 }}
+              style={{width: '100%', marginLeft: 16}}
             >
               <label htmlFor="lng">Longitude</label>
               <Field
                 id="lng"
-                name="lng"
+                name="location.lng"
                 component="input"
                 type="number"
                 min={0}
