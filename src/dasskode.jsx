@@ -1,10 +1,14 @@
 import * as React from "react";
+import { Link } from 'react-router-dom';
 
-const Dasskode = ({ name, code, location: { lat, lng } }) => (
+const Dasskode = ({ id, name, code, location: { lat, lng } }) => (
   <article id={name}>
     <h1>{name}</h1>
     <p>Code: {code}</p>
-    @ ({lat}, {lng})
+    <div style={{display: 'flex', justifyContent: 'space-between' }}>
+      @ ({lat}, {lng})
+      <Link to={`/update/${id}`}>Update</Link>
+    </div>
   </article>
 );
 
