@@ -15,7 +15,6 @@ export default class Home extends React.PureComponent {
   }
 
   render() {
-    console.log(this.state)
     return (
       <React.Fragment>
         <h1>Dasskoder</h1>
