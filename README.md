@@ -1,3 +1,3 @@
 # Dasskoder
 
-![sup](./public/dasskode.jpg)
+![sup](./public/img/dasskode.jpg)
